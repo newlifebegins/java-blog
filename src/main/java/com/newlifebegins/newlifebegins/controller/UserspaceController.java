@@ -40,6 +40,12 @@ public class UserspaceController {
         return "u";
     }
 
+    /**
+     * 获取个人设置页面
+     * @param username
+     * @param model
+     * @return
+     */
     @GetMapping("/{username}/profile")
     @PreAuthorize("authentication.name.equals(#username)")
     public ModelAndView profile(@PathVariable("username") String username, Model model) {
@@ -91,7 +97,7 @@ public class UserspaceController {
 
 
     /**
-     * 获取编辑头像的界面
+     * 保存头像
      * @param username
      * @param model
      * @return
